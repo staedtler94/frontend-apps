@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 
 interface ProfessionalCardProps {
   children: ReactElement[];
+  bg?: string;
 }
 
 const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ children, bg = "bg-indigo-100" }) => {
