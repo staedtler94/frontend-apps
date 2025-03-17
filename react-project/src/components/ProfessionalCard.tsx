@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 interface ProfessionalCardProps {
-  children: ReactElement;
+  children: ReactElement[];
 }
 
 const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ children, bg = "bg-indigo-100" }) => {
