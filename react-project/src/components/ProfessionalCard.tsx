@@ -1,6 +1,10 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 
-function ProfessionalCard({ children: ReactElement, bg = "bg-indigo-100" }) {
+interface ProfessionalCardProps {
+  children: ReactElement;
+}
+
+const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ children: ReactElement, bg = "bg-indigo-100" }) => {
   return <div className={`${bg} p-6 rounded-lg shadow-md`}>{children}</div>;
 }
 
