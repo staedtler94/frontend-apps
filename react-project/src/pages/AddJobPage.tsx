@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { JobDataType } from "../types/job-data";
 
-const AddJobPage = ({onJobSubmit}) => {
+const AddJobPage = ({onJobSubmit}: {onJobSubmit: (el:Partial<JobDataType>)=>unknown}) => {
 
     const [title, setTitle] = useState('');
     const [type, setType] = useState('');
@@ -16,7 +17,7 @@ const AddJobPage = ({onJobSubmit}) => {
 
     const navigate = useNavigate();
 
-    const submitForm = (e) => {
+    const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const newJob = {
             title,
@@ -90,7 +91,7 @@ const AddJobPage = ({onJobSubmit}) => {
                   id="description"
                   name="description"
                   className="border rounded w-full py-2 px-3"
-                  rows="4"
+                  rows={4}
                   placeholder="Add any job duties, expectations, requirements, etc"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
@@ -167,7 +168,7 @@ const AddJobPage = ({onJobSubmit}) => {
                   id="company_description"
                   name="company_description"
                   className="border rounded w-full py-2 px-3"
-                  rows="4"
+                  rows={parseInt("4")}
                   placeholder="What does your company do?"
                   value={companyDescription}
                   onChange={(e) => setCompanyDescription(e.target.value)}

@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 
 // import Spinner from "../components/Spinner";
 
-const JobPage = ({ deleteJob }) => {
+const JobPage = ({ deleteJob }: {deleteJob: (id:string )=> unknown}) => {
   const { id } = useParams();
   const job = useLoaderData<JobDataType>();
 
@@ -35,14 +35,14 @@ const JobPage = ({ deleteJob }) => {
   //   }, []);
 
   const navigate = useNavigate();
-  const deleteJobEvent = async (e) => {
+  const deleteJobEvent = async (e:unknown) => {
     // console.log(id);
-    // console.log(e);
+    console.log(e);
     const confirm = window.confirm("Are you sure you want to delete this job?");
 
     if(!confirm) return;
 
-    deleteJob(id);
+    deleteJob(id || "");
     toast.success("Job Deleted Successfully");
     
     return navigate("/jobs");

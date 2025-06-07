@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { FaMapMarker } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { JobDataType } from "../types/job-data";
 
-const Job = ({ job }) => {
+const Job = ({job }: {job : JobDataType}) => {
   const [showDescription, setShowDescription] = useState(false);
 
   let description = job.description;
