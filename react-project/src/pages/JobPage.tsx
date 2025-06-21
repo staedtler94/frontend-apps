@@ -16,24 +16,6 @@ const JobPage = ({ deleteJob }: {deleteJob: (id:string )=> unknown}) => {
   const { id } = useParams();
   const job = useLoaderData<JobDataType>();
 
-  //   const [job, setJob] = useState(null);
-  //   const [loading, setLoading] = useState(true);
-
-  //   useEffect(() => {
-  //     const fetchJob = async () => {
-  //       try {
-  //         const res = await fetch(`http://localhost:8000/jobs/${id}`);
-  //         const data = await res.json();
-  //         setJob(data);
-  //       } catch (error) {
-  //         console.error("Error Fetching Job", error);
-  //       } finally {
-  //         setLoading(false);
-  //       }
-  //     };
-  //     fetchJob();
-  //   }, []);
-
   const navigate = useNavigate();
   const deleteJobEvent = async (e:unknown) => {
     // console.log(id);

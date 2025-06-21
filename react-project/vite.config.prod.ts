@@ -14,7 +14,9 @@ export default defineConfig({
     },
   },
   build:{
-    sourcemap: true, // Enable source maps for easier debugging
+    sourcemap: false, // Enable source maps for easier debugging
     minify: true, // Minify the output for production
+    chunkSizeWarningLimit: 500,
+    
   }
 })
